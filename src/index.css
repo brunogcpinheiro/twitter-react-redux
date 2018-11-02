@@ -1,8 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Oxygen', 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell',
-    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #252525;
@@ -73,6 +72,7 @@ li {
 
 .avatar {
   height: 50px;
+  width: 50px;
   border-radius: 25px;
   margin: 10px;
 }
@@ -113,7 +113,6 @@ li {
 }
 .tweet-icons {
   display: flex;
-  align-items: center;
 }
 .tweet-icons > span {
   color: #969696;
@@ -163,4 +162,18 @@ li {
   margin-top: 10px;
   font-size: 20px;
   color: #c3392a;
+}
+
+.loading-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  text-align: center;
+}
+
+.loading {
+  padding: 16px;
+  margin: 0 auto;
 }

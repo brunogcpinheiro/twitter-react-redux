@@ -2,7 +2,7 @@ let users = {
   bruno_carpinelli: {
     id: 'bruno_carpinelli',
     name: 'Bruno Carpinelli',
-    avatarURL: 'https://i.imgur.com/NPvzci6.jpg',
+    avatarURL: 'https://i.imgur.com/NPvzci6.jpg?2',
     tweets: [
       '8xf0y6ziyjabvozdd253nd',
       'hbsc73kzqi75rg7v1e0i6a',
