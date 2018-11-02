@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { handleInitialData } from '../actions/shared';
 import Dashboard from './Dashboard';
 import Loading from './Loading';
+import LoadingBar from 'react-redux-loading-bar';
 
 class App extends Component {
   componentDidMount() {
@@ -12,6 +13,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <LoadingBar style={{ backgroundColor: '#badc58', height: '5px' }} />
         {this.props.loading === true ? <Loading /> : <Dashboard />}
       </div>
     );

@@ -8,6 +8,7 @@
     "react-icons": "^3.2.2",
     "react-loading": "^2.0.3",
     "react-redux": "^5.1.0",
+    "react-redux-loading-bar": "^4.1.0",
     "react-scripts": "2.1.1",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0"
