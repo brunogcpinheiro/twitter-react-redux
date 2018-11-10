@@ -1,30 +1,46 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { handleInitialData } from '../actions/shared';
 import Dashboard from './Dashboard';
 import Loading from './Loading';
-import LoadingBar from 'react-redux-loading-bar';
 import NewTweet from './NewTweet';
+import TweetPage from './TweetPage';
+import Nav from './Nav';
+import LoadingBar from 'react-redux-loading-bar';
 
 class App extends Component {
-  componentDidMount() {
-    this.props.dispatch(handleInitialData());
-  }
+	componentDidMount () {
+		this.props.dispatch(handleInitialData());
+	}
 
-  render() {
-    return (
-      <div className="App">
-        <LoadingBar style={{ backgroundColor: '#badc58', height: '5px' }} />
-        {this.props.loading === true ? <Loading /> : <NewTweet />}
-      </div>
-    );
-  }
+	render () {
+		return (
+			<Router>
+				<Fragment>
+					<LoadingBar style={{ backgroundColor: '#badc58' }} />
+					<div className="container">
+						{this.props.loading === true ? (
+							<Loading />
+						) : (
+							<div>
+								<Nav />
+								<Route path="/" exact component={Dashboard} />
+								<Route path="/tweet/:id" component={TweetPage} />
+								<Route path="/new" component={NewTweet} />
+							</div>
+						)}
+					</div>
+				</Fragment>
+			</Router>
+		);
+	}
 }
 
-function mapStateToProps({ authedUser }) {
-  return {
-    loading: authedUser === null,
-  };
+function mapStateToProps ({ authedUser }) {
+	return {
+		loading: authedUser === null,
+	};
 }
 
 export default connect(mapStateToProps)(App);
